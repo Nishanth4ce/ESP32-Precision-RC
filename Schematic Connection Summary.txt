@@ -1,0 +1,35 @@
+Schematic Connection Summary
+Here are the step-by-step connections to build your circuit:
+
+1. ESP32 to Motor Driver (L298N)
+These control signals are essential. This diagram maps the ESP32  output pins to the motor driver's control inputs:
+
+
+Speed Control (PWM): ESP32 GPIO pins 25 and 32 are used as Pulse Width Modulation (PWM) outputs. They connect to the ENA (Enable A) and ENB (Enable B) pins on the motor driver, respectively, to regulate the speed of the motors.
+
+
+Direction Control: ESP32 GPIO pins 27, 26, 13, and 12 connect to IN1, IN2, IN3, and IN4 on the motor driver to control the direction (forward, backward, turn) of both motors.
+
+2. Power Connections (Battery, Driver, ESP32)
+Wiring the power supply correctly is critical:
+
+The positive (+) terminal of your 12V Li-ion battery pack  connects directly to the 12V power input pin on the L298N motor driver. This provides high-current power for the motors.
+
+The negative (-) terminal of the 12V battery connects to the GND (Ground) pin on the L298N motor driver.
+
+
+Crucial Step for Common Ground: A wire must connect a GND pin on the ESP32  to the GND pin on the motor driver. A common ground ensures that the ESP32's  control signals are correctly referenced.
+
+You must also provide a separate power source to your ESP32  (e.g., via a USB cable or a 5V regulated supply), as its logic level is 3.3V, not 12V.
+
+3. Motor Driver (L298N) to Motors
+This is the final power output to get the car moving:
+
+Connect the two Motor A output terminals from the driver to the two terminals of your right motor.
+
+Connect the two Motor B output terminals from the driver to the two terminals of your left motor.
+
+The code will then use the defined pins and logic to control these connections for all types of movement, including the newly added diagonal turns .
++1
+
+This diagram and wiring description will serve as a clear and reliable guide for successfully assembling and updating your Bluetooth RC car, ensuring all your hardware is connected according to your code's design.
