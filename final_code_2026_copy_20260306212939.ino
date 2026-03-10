@@ -1,6 +1,5 @@
 //IMPORTANT
 //Use ESP32 2.0.17 Version Board for Compiling and Uploading
-//Made by Darshan Prakash using ChatGPT
 
 #include <Arduino.h>
 #include "BluetoothSerial.h"
